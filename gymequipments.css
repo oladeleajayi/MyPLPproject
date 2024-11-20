@@ -50,19 +50,7 @@ header>nav>img {
     display: block; 
 
 } 
-/*
-nav ul {
-    width: 55%;
-}
 
-header>nav ul+form {
-    width: 10%;
-    margin-top: 1%;
-} 
-
-nav form input {
-    width: 100%
-}  */
 
 main>section {
     width: 50%;
@@ -86,6 +74,7 @@ main>section+section section * {
 
 
 main>section>h2 {
+    color: rgb(255, 123, 0);
     height: 30px;
 }
 
@@ -138,7 +127,9 @@ main>section+section section.fourth {
     background-position: center;
     height: 250px;
 }
-
+main+section>section>h2{
+    color: rgb(255, 123, 0);
+}
 section article {
     width: 33.3333%;
     height: 420px;
