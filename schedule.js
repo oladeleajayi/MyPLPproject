@@ -1,30 +1,25 @@
+document.getElementById('frm-schedule').addEventListener('submit', async (event) => {
+  event.preventDefault();
 
-// //import
-// const express = require('express');
-// const path = require('path');
-// require('dotenv').config();
+  const email = document.getElementById('email').value;
+  const firstName = document.getElementById('first name').value;
+  const lastName = document.getElementById('Last name').value;
+  const interestedIn = document.getElementById('Interested in').value;
 
-// const authRoutes = require('./routes/auth');
+  try {
+    const response = await fetch('http://localhost:5000/api/schedule', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, firstName, lastName, interestedIn }),
+    });
 
-// const app = express();
-
-// //set-up middleware
-// app.use(express.static(path.join(__dirname, '/')));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-
-// app.use('/auth', authRoutes)
-
-// app.get('/', (request, response) => {
-//     response.sendFile(path.join(__dirname, 'schedule.html'));
-// });
-
-// app.get('/schedule', (request, response) => {
-//     response.sendFile(path.join(__dirname, 'schedule.html'));
-// });
-
-// const PORT = process.env.PORT;
-
-// app.listen(PORT, () => {
-//     console.log(`Server is running at http://127.0.0.1:${PORT}`)
-// });
+    if (response.ok) {
+      alert('Schedule submitted successfully!');
+    } else {
+      alert('Failed to submit the schedule');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('An error occurred while submitting the schedule');
+  }
+});
