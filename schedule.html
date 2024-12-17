@@ -37,6 +37,32 @@
         <input type="Interested in" id="Interested in" required>
         <button type="submit">schedule</button>
     </form>
+
+    <h3>Submitted Schedules:</h3>
+    <ul id="schedule-list"></ul>
+    
+    <script>
+        async function fetchSchedules() {
+            try {
+                const response = await fetch('http://localhost:5000/api/schedules');
+                const schedules = await response.json();
+
+                const scheduleList = document.getElementById('schedule-list');
+                scheduleList.innerHTML = ''; // Clear previous data
+
+                schedules.forEach((schedule) => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${schedule.firstName} ${schedule.lastName} - ${schedule.email} - Interested in: ${schedule.interestedIn}`;
+                    scheduleList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error fetching schedules:', error);
+            }
+        }
+
+        fetchSchedules();
+    </script>
+
     <script src="schedule.js"></script>
 </body>
 
