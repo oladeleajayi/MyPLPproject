@@ -11,6 +11,22 @@ Package Files:
 package.json (all dependencies like express, mongoose, cors).
 
 Instructions for Running the Project:
+Download MongoDB with shell and add to environment
+Open MongoDB and add my scheduleDB to the database
+Then connect ScheduleDB to server from the MongoDB page
+
+Come to VsCODDE and open my folder
+Scroll down to server.js and run
+it will display server is running on http://localhost:5000 as coded 
+From here now you can open my html file and begins to browse through the pages
+
+TO SCHEULE AN APPOINTMENT
+Cick the link (schedule) at top right of my realwebanyhow4.html
+it will open up a form to fill
+Fill the form and submit,make sure that server.js is running an still connected to the scheduleDB on Mongodb
+it will display succeeful submission and list your submitted data along with others underneath
+From here open the mongodb page and update the data ,you will see the newest dat submission.
+
 i added README.md file with:
 Project description.
 
